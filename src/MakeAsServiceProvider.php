@@ -3,11 +3,10 @@
 namespace Smpita\MakeAs;
 
 use Illuminate\Container\Container;
+use Illuminate\Support\ServiceProvider;
 use Smpita\MakeAs\Exceptions\MakeAsResolutionException;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class MakeAsServiceProvider extends PackageServiceProvider
+class MakeAsServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap MakeAs service.
@@ -36,15 +35,5 @@ class MakeAsServiceProvider extends PackageServiceProvider
 
             throw new MakeAsResolutionException("Target [$expected] is not instantiable.");
         });
-    }
-
-    public function configurePackage(Package $package): void
-    {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package->name('makeas');
     }
 }
