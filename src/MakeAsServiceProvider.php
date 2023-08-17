@@ -3,6 +3,7 @@
 namespace Smpita\MakeAs;
 
 use Illuminate\Container\Container;
+use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\ServiceProvider;
 use Smpita\MakeAs\Exceptions\MakeAsResolutionException;
 
@@ -25,6 +26,7 @@ class MakeAsServiceProvider extends ServiceProvider
              * @param  class-string<TExpected>|null  $expected
              * @return ($abstract is class-string<TAbstract> ? ($expected is null ? TAbstract : TExpected) : TExpected)
              *
+             * @throws BindingResolutionException
              * @throws MakeAsResolutionException
              */
             $expected ??= $abstract;
