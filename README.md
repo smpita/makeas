@@ -21,17 +21,17 @@ composer require smpita/makeas
 
 ## Usage
 
-If you bound the object to the class-string
+If you bound an object to its class-string
 ```php
 $typed = app()->makeAs(Bound::class);
 ```
 
-Of course you can pass in parameters
+Of course, you can pass in parameters
 ```php
 $typed = app()->makeAs(Bound::class, []);
 ```
 
-If you bound the object with a magic string
+If you bound an object with a magic string
 ```php
 $typed = app()->makeAs('magic-string', [], Bound::class);
 ```
