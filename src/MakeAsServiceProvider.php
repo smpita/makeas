@@ -4,7 +4,6 @@ namespace Smpita\MakeAs;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Smpita\MakeAs\Commands\MakeAsCommand;
 
 class MakeAsServiceProvider extends PackageServiceProvider
 {
