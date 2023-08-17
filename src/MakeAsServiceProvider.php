@@ -14,7 +14,7 @@ class MakeAsServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->app->macro('makeAs', function (string $abstract, array $parameters = [], string $expected = null) {
+        $this->app->macro('makeAs', function (string $abstract, array $parameters = [], string $expected = null): object {
             /**
              * Guarantee a resolved object is a given class.
              *

@@ -38,7 +38,7 @@ $typed = app()->makeAs('magic-string', [], Bound::class);
 
 ## Signature
 ```php
-makeAs(string $abstract, array $parameters = [], string $expected = null): mixed
+makeAs(string $abstract, array $parameters = [], string $expected = null): object
 ```
 
 ## Testing
