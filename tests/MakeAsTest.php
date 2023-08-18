@@ -68,7 +68,13 @@ class MakeAsTest extends TestCase
         app()->makeAs(ContainerConcreteStub::class, [], ContainerConcreteStubAlternate::class);
     }
 
-    public function testPhpstanUnderstands(): void
+    /**
+     * @test
+     *
+     * @group smpita
+     * @group makeas
+     */
+    public function staticAnalysisUnderstands(): void
     {
         app()->bind(ContainerConcreteStub::class, function () {
             return new ContainerConcreteStub();
