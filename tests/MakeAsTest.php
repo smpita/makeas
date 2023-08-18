@@ -67,10 +67,29 @@ class MakeAsTest extends TestCase
         $this->expectException(MakeAsResolutionException::class);
         app()->makeAs(ContainerConcreteStub::class, [], ContainerConcreteStubAlternate::class);
     }
+
+    /**
+     * @test
+     *
+     * @group smpita
+     * @group makeas
+     */
+    public function staticAnalysisUnderstands(): void
+    {
+        app()->bind(ContainerConcreteStub::class, function () {
+            return new ContainerConcreteStub();
+        });
+
+        $this->assertTrue(app()->makeAs(ContainerConcreteStub::class)->testMethod());
+    }
 }
 
 class ContainerConcreteStub
 {
+    public function testMethod(): bool
+    {
+        return true;
+    }
 }
 
 class ContainerConcreteStubAlternate

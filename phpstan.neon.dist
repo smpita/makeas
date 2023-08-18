@@ -2,8 +2,12 @@ parameters:
     level: max
     paths:
         - src
+        - tests
     tmpDir: build/phpstan
     checkOctaneCompatibility: true
     checkModelProperties: true
     checkMissingIterableValueType: false
-
+    ignoreErrors:
+        -
+            message: '#Call to an undefined method Pest\\PendingCalls\\TestCall::expect\(\)#'
+            path: tests/ArchTest.php
