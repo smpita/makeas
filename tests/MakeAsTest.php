@@ -2,7 +2,6 @@
 
 namespace Smpita\MakeAs\Tests;
 
-use Orchestra\Testbench\TestCase;
 use Smpita\MakeAs\Exceptions\MakeAsResolutionException;
 
 class MakeAsTest extends TestCase
