@@ -4,17 +4,9 @@ namespace Smpita\MakeAs\Tests;
 
 use Orchestra\Testbench\TestCase;
 use Smpita\MakeAs\Exceptions\MakeAsResolutionException;
-use Smpita\MakeAs\MakeAsServiceProvider;
 
 class MakeAsTest extends TestCase
 {
-    public function getPackageProviders($app)
-    {
-        return [
-            MakeAsServiceProvider::class,
-        ];
-    }
-
     /**
      * @test
      *
