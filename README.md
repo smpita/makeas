@@ -3,6 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/smpita/makeas.svg?style=flat-square)](https://packagist.org/packages/smpita/makeas)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/smpita/makeas/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/smpita/makeas/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/smpita/makeas/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/smpita/makeas/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsmpita%2Fmakeas.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsmpita%2Fmakeas?ref=badge_shield)
 [![Total Downloads](https://img.shields.io/packagist/dt/smpita/makeas.svg?style=flat-square)](https://packagist.org/packages/smpita/makeas)
 
 - Do you fight the `mixed` signature of `app()->make()` when resolving objects?
@@ -66,3 +67,6 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsmpita%2Fmakeas.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsmpita%2Fmakeas?ref=badge_large)
