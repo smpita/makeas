@@ -12,10 +12,10 @@ class MakeAsTest extends TestCase
      * @group smpita
      * @group makeas
      */
-    public function containerCanMakeAsFromAbstract(): void
+    public function container_can_make_as_from_abstract(): void
     {
         app()->bind(ContainerConcreteStub::class, function () {
-            return new ContainerConcreteStub();
+            return new ContainerConcreteStub;
         });
 
         $this->assertInstanceOf(ContainerConcreteStub::class, app()->makeAs(ContainerConcreteStub::class));
@@ -27,10 +27,10 @@ class MakeAsTest extends TestCase
      * @group smpita
      * @group makeas
      */
-    public function canMakeAsFromMagicString(): void
+    public function can_make_as_from_magic_string(): void
     {
         app()->bind('makeAs', function () {
-            return new ContainerConcreteStub();
+            return new ContainerConcreteStub;
         });
 
         $this->assertInstanceOf(ContainerConcreteStub::class, app()->makeAs('makeAs', [], ContainerConcreteStub::class));
@@ -42,7 +42,7 @@ class MakeAsTest extends TestCase
      * @group smpita
      * @group makeas
      */
-    public function makeAsThrowsExceptionWhenMisused(): void
+    public function make_as_throws_exception_when_misused(): void
     {
         app()->bind(ContainerConcreteStub::class, function () {
             return 'makeAs';
@@ -58,10 +58,10 @@ class MakeAsTest extends TestCase
      * @group smpita
      * @group makeas
      */
-    public function makeAsThrowsExceptionWhenExpectationIsNotMet(): void
+    public function make_as_throws_exception_when_expectation_is_not_met(): void
     {
         app()->bind(ContainerConcreteStub::class, function () {
-            return new ContainerConcreteStub();
+            return new ContainerConcreteStub;
         });
 
         $this->expectException(MakeAsResolutionException::class);
@@ -74,10 +74,10 @@ class MakeAsTest extends TestCase
      * @group smpita
      * @group makeas
      */
-    public function staticAnalysisUnderstands(): void
+    public function static_analysis_understands(): void
     {
         app()->bind(ContainerConcreteStub::class, function () {
-            return new ContainerConcreteStub();
+            return new ContainerConcreteStub;
         });
 
         $this->assertTrue(app()->makeAs(ContainerConcreteStub::class)->testMethod());
@@ -92,6 +92,4 @@ class ContainerConcreteStub
     }
 }
 
-class ContainerConcreteStubAlternate
-{
-}
+class ContainerConcreteStubAlternate {}
