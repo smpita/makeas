@@ -3,10 +3,10 @@
 namespace Smpita\MakeAs;
 
 use Illuminate\Container\Container;
-use Illuminate\Support\ServiceProvider;
-use Smpita\MakeAs\Exceptions\MakeAsResolutionException;
-use Smpita\MakeAs\Exceptions\InvalidApplicationException;
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Support\ServiceProvider;
+use Smpita\MakeAs\Exceptions\InvalidApplicationException;
+use Smpita\MakeAs\Exceptions\MakeAsResolutionException;
 
 class MakeAsServiceProvider extends ServiceProvider
 {
@@ -17,7 +17,7 @@ class MakeAsServiceProvider extends ServiceProvider
     {
         $app = app();
 
-        if(! is_object($app) || ! method_exists($app, 'macro')) {
+        if (! is_object($app) || ! method_exists($app, 'macro')) {
             throw new InvalidApplicationException('Laravel is required to use smpita/makeas');
         }
 
