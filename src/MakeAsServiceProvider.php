@@ -3,9 +3,10 @@
 namespace Smpita\MakeAs;
 
 use Illuminate\Container\Container;
-use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\ServiceProvider;
 use Smpita\MakeAs\Exceptions\MakeAsResolutionException;
+use Smpita\MakeAs\Exceptions\InvalidApplicationException;
+use Illuminate\Contracts\Container\BindingResolutionException;
 
 class MakeAsServiceProvider extends ServiceProvider
 {
@@ -14,7 +15,13 @@ class MakeAsServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        app()->macro('makeAs', function (string $abstract, array $parameters = [], ?string $expected = null) {
+        $app = app();
+
+        if(! is_object($app) || ! method_exists($app, 'macro')) {
+            throw new InvalidApplicationException('Laravel is required to use smpita/makeas');
+        }
+
+        $app->macro('makeAs', function (string $abstract, array $parameters = [], ?string $expected = null) {
             /**
              * Guarantee a resolved object is a given class.
              *
@@ -31,8 +38,10 @@ class MakeAsServiceProvider extends ServiceProvider
              */
             $expected ??= $abstract;
 
-            if (is_a($concrete = Container::getInstance()->make($abstract, $parameters), $expected)) {
-                return $concrete;
+            $instance = Container::getInstance()->make($abstract, $parameters);
+
+            if (is_object($instance) && is_a($instance, $expected)) {
+                return $instance;
             }
 
             throw new MakeAsResolutionException("Target [$expected] is not instantiable.");
