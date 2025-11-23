@@ -1,7 +1,7 @@
 # WARNING - PROJECT ABANDONED
 - This feature has been baked into `app()->make()` as of Laravel 11.
-- [Repository](https://github.com/smpita/makeas) has been archived/abandoned.
-- See [TypeAs](https://github.com/smpita/makeas) for your typing needs.
+- This [repository](https://github.com/smpita/makeas) has been archived/abandoned.
+- See [smpita/typeas](https://github.com/smpita/typeas) for your typing needs.
 
 # Typed Container Resolver for Laravel
 
@@ -12,7 +12,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/smpita/makeas.svg?style=flat-square)](https://packagist.org/packages/smpita/makeas)
 
 - Do you fight the `mixed` signature of `app()->make()` when resolving objects?
-- Do you want to effortlessly guarantee the resolved object is the expected object? 
+- Do you want to effortlessly guarantee the resolved object is the expected object?
 - Do you use static analysis on your [Laravel](https://laravel.com/) app?
 
 [MakeAs](https://github.com/smpita/makeas) will make sure you make the object you expect, and nicely type the return for static analysis.
