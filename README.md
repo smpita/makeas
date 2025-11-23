@@ -1,6 +1,7 @@
 # WARNING - PROJECT ABANDONED
 - This feature has been baked into `app()->make()` as of Laravel 11.
 - [Repository](https://github.com/smpita/makeas) has been archived/abandoned.
+- See [TypeAs](https://github.com/smpita/makeas) for your typing needs.
 
 # Typed Container Resolver for Laravel
 
